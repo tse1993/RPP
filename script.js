@@ -1,32 +1,21 @@
 let humanScore = 0
 let computerScore = 0
-const humanSelection = getHumanChoice()
-const computerSelection = getComputerChoice()
+let choices = ['rock', 'paper', 'scissors']
 
 function getComputerChoice(){
-    let num = Math.floor(Math.random()* 3) 
-    if (num === 1){
-        return 'Rock'
+    let num = Math.floor(Math.random()*3)
+    if (num ===1){
+        return choices[0]
     }
-    else if (num === 2){
-        return 'Paper'
+    else if (num ===2){
+        return choices[1]
     }
-    else 
-    return 'Scissors'
-}
- 
-function getHumanChoice(){
-    let humanChoice = prompt('Rock, Paper, Scissors')
-    return humanChoice
+    else{
+        return choices[2]
+    }
 }
 
-function playRound(humanChoice, computerChoice){
-    let humanChoice = humanSelection
-    let computerChoice = computerSelection
-    if (humanChoice === computerChoice)
-        return 'Tie'
-    else if (humanChoice === 'Rock' && computerChoice === 'Paper')
-        return 'Computer wins'
-    else if (humanChoice === 'Rock' && computerChoice === 'Scissors')
-        return 'Human wins'
+function getHumanChoice(){
+    let choice = prompt('rock, paper, scissors?')
+    return choice.toLowerCase()
 }
